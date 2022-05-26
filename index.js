@@ -19,6 +19,9 @@ app.use('/api/notes', require('./routes/notes'));
 app.get('/', (req, res) => {
     res.send('Hello world');
 })
+app.get('/auth', (req, res) => {
+    res.send('This is Auth Page');
+})
 
 app.get('/*', (req, res) => {
   res.send('Page Not found')
