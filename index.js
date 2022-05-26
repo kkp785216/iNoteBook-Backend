@@ -1,6 +1,6 @@
 const connectToMongoose = require('./db');
 const express = require('express')
-const cors = require('cors')
+// const cors = require('cors')
 
 // Access to fetch at 'http://localhost:5000/api/notes/fetchallnotes' from origin 'http://localhost:3000' has been blocked by CORS policy
 
@@ -9,7 +9,7 @@ connectToMongoose();
 const app = express()
 const port = 5000
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // Available Routes
@@ -21,12 +21,6 @@ app.get('/', (req, res) => {
 })
 app.get('/auth', (req, res) => {
     res.send('This is Auth Page');
-})
-app.post('/auth', (req, res) => {
-    res.send({name: "Krisna"});
-})
-app.put('/auth', (req, res) => {
-    res.send({name: "Delete"});
 })
 
 app.get('/*', (req, res) => {
