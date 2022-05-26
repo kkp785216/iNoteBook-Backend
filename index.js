@@ -22,6 +22,9 @@ app.get('/', (req, res) => {
 app.get('/auth', (req, res) => {
     res.send('This is Auth Page');
 })
+app.post('/auth', (req, res) => {
+    res.send({name: "Krisna"});
+})
 
 app.get('/*', (req, res) => {
   res.send('Page Not found')
